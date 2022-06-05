@@ -7,27 +7,34 @@ class Main {
     Card card = new Card();
     
     System.out.println("블랙 잭 게임 입니다!!");
-    System.out.println("첫 카드입니다.");
-    card.drow();
-    System.out.println("두번째 카드입니다.");
-    card.drow();
+    for(int a = 0; a < 5; a++){
+      card.drowing();
+      card.valueSum();
+      System.out.println();
+    }
   }
   
 }
 
 class Card {
   Random random = new Random(); //Random 객체 생성
-  public void drow() {
-    int card = (random.nextInt(13)+1);
-    System.out.println("나온 카드 값 :" + card);
-  }
 
+  public int drowing(){
+    System.out.println("카드를 뽑습니다.");
+    int i = (random.nextInt(13)+1);
+    System.out.println("나온 카드 값 :" + i);
+    return i;
+  }
+  
   public void valueSum(){
     int valueSum = 0;
-    valueSum += 1;
+    valueSum += drowing();
     System.out.println("나온 카드 값들의 합 :" + valueSum);
   }
 }
+
+//값을 받은 카드값의 합을 구현해야 함
+//
 
 //블랙 잭 룰
 //1. 게임이 끝날때 카드의 합이 16이상 21이하 이여야 함
