@@ -8,7 +8,6 @@ class Main {
     
     System.out.println("블랙 잭 게임 입니다!!");
     for(int a = 0; a < 5; a++){
-      card.drowing();
       card.valueSum();
       System.out.println();
     }
@@ -18,7 +17,8 @@ class Main {
 
 class Card {
   Random random = new Random(); //Random 객체 생성
-
+  int valueSum = 0;
+  
   public int drowing(){
     System.out.println("카드를 뽑습니다.");
     int i = (random.nextInt(13)+1);
@@ -27,7 +27,6 @@ class Card {
   }
   
   public void valueSum(){
-    int valueSum = 0;
     valueSum += drowing();
     System.out.println("나온 카드 값들의 합 :" + valueSum);
   }
